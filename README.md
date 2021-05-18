@@ -1,3 +1,4 @@
+total completion time: roughly 10 hours (1pm-11pm~ CDT)
 ## Installation
 
 Use the dependency manager [poetry](https://github.com/python-poetry/poetry) to install.
