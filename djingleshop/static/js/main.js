@@ -137,7 +137,7 @@ const sortResults = (type, queryString) => {
                             <img class="scroll-card-image" src="${productList[i].product_image}"/>
                             <p class="product-description">${productList[i].description}</p>
                             <div class="add-cart" id="cart-handler-${productList[i].id}">
-                                <p class="product-price">${productList[i].price}</p>
+                                <p class="product-price">$${productList[i].price}</p>
                                 ${buttonHandler}
                             </div>
                         </div>
