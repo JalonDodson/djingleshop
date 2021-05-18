@@ -1,0 +1,68 @@
+{% include 'base.html' %}
+{% load static %}
+<div class="container">
+    <header class="h-container">
+        <div class="header-text-wrapper">
+            <h2 class="intro-text">Add a Product to DjingleShop</h2>
+            <p class="descriptor-text"><i>DjingleShop - Where every day's a holiday</i></p>
+        </div>
+    </header>
+    <main>
+        <form class="product-form" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+            <div class="product-form-inner">
+                <div class="form-logo-cont">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="form-logo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
+                    </svg>
+                </div>
+                <div class="form-text-container">
+                    <h1 class="form-text">Add New Product</h1>
+                </div>
+                <div class="p-input-wrap">
+                    <div class="p-input-inner">
+                        <label class="product-label">Product Name</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="p-input-inner">
+                        <label class="product-label">Price (USD)</label>
+                        {{ form.price }}
+                    </div>
+                </div>
+                <div class="p-dsc">
+                    <label class="product-label">Description</label>
+                    {{ form.description }}
+                </div>
+                <div class="upload-photo-container">
+                    <label class="product-label">Product Photo</label>
+                    <div id="photo-lbl" class="photo-inner">
+                        <label class="select-wrapper">
+                            <div class="select-inner">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="select-icon" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                </svg>
+                                <p class="select-label">Choose photo</p>
+                            </div>
+                            {{ form.product_image }}
+                        </label>
+                        
+                    </div>
+                    <div id="preview-container" class="hidden">
+                        <div class="prev-wrapper">
+                            <img id="image-preview" src=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="handle-form">
+                    <button class="cancel-submit" onclick="window.location.href='/'">
+                        Cancel
+                    </button>
+                    <button class="submit" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+</div>
+<script src="{% static 'js/add_product.js' %}"></script>
